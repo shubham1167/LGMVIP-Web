@@ -1,0 +1,191 @@
+<html>
+    <title>
+        Registration Form
+    </title>
+    <style>
+        body {font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color:rgb(246, 249, 204);
+        }
+    *{
+        box-sizing: border-box;
+        width:300px;
+        
+       
+        
+
+     } input[type=text],input[type=email]{
+            width:100%;
+            padding:15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            background-color:whites;
+          border-color:blue;
+
+
+        }
+        .gender,.skills{
+            width:100%;
+            padding:15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            background-color:whites;
+          border-color:blue;
+
+
+        }
+        input[type=text]:focus,
+        input[type=email]:focus{
+            background-color: antiquewhite;
+            outline:none;
+        }    
+        button{
+            background-color: blue;
+            color:white;
+            padding:14px 20px;
+            margin: 8px 0;
+            border:none;
+            cursor:pointer;
+            width:100%;
+           
+        }
+        button:hover{
+            opacity:1;
+
+        }
+        
+        .container{
+            padding: 16px;
+
+        }
+        table
+        {
+           float:left;
+            padding-left:500px;
+            position:absolute;
+           top:30%;
+            
+        }
+        th, td {
+             padding: 15px;
+            text-align: left;
+            border-bottom: 8px solid #ddd;
+          
+            
+}
+        
+        
+        
+        
+        
+    </style>
+
+<body>
+   
+    
+    <div class="Container">
+        <form>
+        <h1> Student Registration Form </h2> 
+        <h3> Please Fill This Form</h3>
+       
+        <hr>
+        <label for="name"> <b> Name</b>
+        </label>
+        <input type="text" placeholder="Enter Name" id="name" name="name" required></input>
+        
+        <label for="email"> <b> Email</b>
+        </label>
+        <input type="email" placeholder="Enter Email" id="email" name="email" required></input>
+
+        <label for="website"> <b> Website</b>
+        </label>
+        <input type="text" placeholder="Website Link " id="website" name="website" required></input>
+
+        <label for="image"> <b> Image Link</b>
+        </label>
+        <input type="text" placeholder="Image Link " id="image" name="Image" required></input>
+
+        <label for="gender"> <b> Gender</b>
+        </label>
+        <select name="gender" class="gender" id="gender">
+            <option value="none" selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        
+        <label for="skills">  <b> Skills</b>
+        </label>
+        <select name="skills" class="skills"  id="skills">
+            <option value="none" selected>Skills</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+        </select>
+
+        <label>
+            
+           
+        <button type="button" class="regbtn" id="btn" onclick="AddRow()">Registration</button>
+    </form> 
+
+</div>
+<div class="display">
+    <table id="data" class="data">
+        <tr>
+            <th> Name </th>
+            <th> Email </th>
+            <th> Website </th>
+            <th> Image Link </th>
+            <th> Gender </th>
+            <th> Skills </th>
+        </tr>
+       
+    </table>
+</div>
+
+   <script>
+var list1 = [];
+var list2 = [];
+var list3 = [];
+var list4 = [];
+var list5 = [];
+var list6 = [];
+
+var n = 1;
+var x = 0;
+
+function AddRow() {
+
+    var AddRown = document.getElementById('data');
+    var NewRow = AddRown.insertRow(n);
+
+    list1[x] = document.getElementById("name").value;
+    list2[x] = document.getElementById("email").value;
+    list3[x] = document.getElementById("website").value;
+    list4[x] = document.getElementById("image").value;
+    list5[x] = document.getElementById("gender").value;
+    list6[x] = document.getElementById("skills").value;
+
+    var cel1 = NewRow.insertCell(0);
+    var cel2 = NewRow.insertCell(1);
+    var cel3 = NewRow.insertCell(2);
+    var cel4 = NewRow.insertCell(3);
+    var cel5 = NewRow.insertCell(4);
+    var cel6 = NewRow.insertCell(5);
+
+    cel1.innerHTML = list1[x];
+    cel2.innerHTML = list2[x];
+    cel3.innerHTML = list3[x];
+    cel4.innerHTML = list4[x];
+    cel5.innerHTML = list5[x];
+    cel6.innerHTML = list6[x];
+
+    n++;
+    x++;
+}
+   </script>
+</div>
+</body>
+
+</html>
